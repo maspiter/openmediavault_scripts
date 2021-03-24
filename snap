@@ -23,11 +23,11 @@ getstatus()
 #output status of last sync
 checkit()
 {
-   if [ $status == "OK" ]
+   if [ "$status" == "OK" ]
    then
       echo "Snapilicious, all snapped up!";
    else
-      echo "Bummer, that did not snap right!\n$status";
+      echo -e "Bummer, that did not snap right!\n$status";
    fi
 }
 
