@@ -9,7 +9,7 @@ last_modified=`stat -c "%Y" $file`
 getstatus()
 {
    #last line of output file -eq "Nothing to do"
-   nothing_to_do=`sed -n '$p' $file`;
+   nothing_to_do=`sed -n '$p' < $file`
    #output of 12th last line of output file
    everything_ok=`sed -n ':a;${P;q};N;12,$D;ba' < $file`
    if [[ $nothing_to_do == *"Nothing to do"* || $everything_ok == *"Everything OK"* ]]
